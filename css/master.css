@@ -53,7 +53,7 @@ header .container {
 header .container .logo {
   display: flex;
   justify-content: space-evenly;
-  flex-basis: 17%;
+  width: 160px;
   align-items: center;
   background-color: black;
   padding: 10px;
@@ -66,7 +66,7 @@ header .container .logo i {
 }
 
 header .container .logo p {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
   color: white;
 }
@@ -78,6 +78,12 @@ header .container .nav {
   border-radius: 5px;
   height: 120px;
   align-items: center;
+}
+
+header .container .nav i {
+  color: white;
+  font-size: 25px;
+  display: none;
 }
 
 header .container .nav ul {
@@ -100,5 +106,15 @@ header .container .nav ul li a {
 
 header .container .nav ul li a:hover {
   background-color: black;
+}
+
+@media (max-width: 991px) {
+  
+  header .container .nav ul {
+    display: none;
+  }
+  header .container .nav i {
+    display: block;
+  }
 }
 /* end header */
