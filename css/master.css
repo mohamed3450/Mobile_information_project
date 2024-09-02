@@ -1,4 +1,8 @@
 /* start global rules */
+body {
+  font-family: "Exo", "sans-serif";
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -11,7 +15,6 @@
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  background-color: black;
 }
 
 /* small */
@@ -36,5 +39,66 @@
 }
 /* end global rules */
 /* start header */
+header {
+  background-color: #949494;
+}
 
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 120px;
+}
+
+header .container .logo {
+  display: flex;
+  justify-content: space-evenly;
+  flex-basis: 17%;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+header .container .logo i {
+  font-size: 30px;
+  color: white;
+}
+
+header .container .logo p {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+header .container .nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 5px;
+  height: 120px;
+  align-items: center;
+}
+
+header .container .nav ul {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  align-items: center;
+}
+
+header .container .nav ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: white;
+  margin-right: 5px;
+  padding: 10px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+header .container .nav ul li a:hover {
+  background-color: black;
+}
 /* end header */
