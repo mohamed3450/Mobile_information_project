@@ -1,3 +1,8 @@
+:root {
+  --main-color: #601cfa;
+  --secondary-color: ;
+}
+
 /* start global rules */
 body {
   font-family: "Exo", "sans-serif";
@@ -8,6 +13,7 @@ body {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  text-transform: capitalize;
 }
 
 .container {
@@ -37,10 +43,15 @@ body {
     width: 1170px;
   }
 }
+
+::selection {
+  background-color: var(--main-color);
+  color: white;
+}
 /* end global rules */
 /* start header */
 header {
-  background-color: #949494;
+  background-color: var(--main-color);
   position: relative;
 }
 
@@ -81,8 +92,8 @@ header .container .nav {
   align-items: center;
 }
 
-header .container .nav i {
-  color: white;
+header .container .nav > i {
+  color: var(--secondary-color);
   font-size: 25px;
   display: none;
 }
@@ -92,6 +103,11 @@ header .container .nav ul {
   list-style: none;
   height: 100%;
   align-items: center;
+  z-index: 1;
+}
+
+header .container .nav ul li i {
+  margin-right: 15px;
 }
 
 header .container .nav ul li a {
@@ -99,8 +115,8 @@ header .container .nav ul li a {
   font-weight: 500;
   font-size: 20px;
   color: white;
-  margin-right: 5px;
-  padding: 10px;
+  margin-right: 20px;
+  padding: 10px 15px;
   transition: 0.3s;
   border-radius: 5px;
 }
@@ -109,32 +125,39 @@ header .container .nav ul li a:hover {
   background-color: black;
 }
 
-
-@media (max-width: 991px) {  
+@media (max-width: 991px) {
   header .container .nav ul {
     display: none;
     position: absolute;
     bottom: -120px;
-    
   }
   header .container .nav ul {
     display: none;
     position: absolute;
-    bottom: -219%;
-    background-color: #94949450;
+    bottom: -203%;
+    background-color: #94949480;
     height: calc(30px * 7);
     padding: 10px;
     width: 100%;
     right: 0;
-    text-align: center;    
+    text-align: center;
     border: 1px solid black;
     height: fit-content;
+    text-align: center;
   }
   header .container .nav ul li {
     margin: 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
   header .container .nav ul li a {
-    padding: 3px 5px;
+    width: 165px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  header .container .nav ul li a i {
+    
   }
   header .container .nav i {
     display: block;
@@ -149,6 +172,50 @@ header .container .nav ul li a:hover {
   height: calc(100vh - 120px);
   background-image: url(../imgs/landing.jpg);
   background-size: cover;
+  position: relative;
+  top: 0;
+}
 
+.landing .content {
+  width: 700px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  padding: 10px 15px;
+  max-width: 100%;
+}
+
+.landing .content h2 {
+  font-size: 100px;
+  font-weight: 600;
+  width: fit-content;
+  color: white;
+}
+
+.landing .content p:last-child {
+  font-size: 50px;
+  font-weight: 400;
+  width: fit-content;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .landing .content h2 {
+    font-size: 40px;
+    position: absolute;
+    bottom: 50px;
+  }
+  .landing .content p:last-child {
+    font-size: 18px;
+    position: absolute;
+    bottom: 20px;
+  }
 }
 /* end landing */
